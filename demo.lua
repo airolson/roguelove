@@ -51,13 +51,15 @@ function DemoProgram.load()
     objectmap[y][x] = wall
   end
 
+  DemoProgram.mapBuffer = nil
+
   -- leave enough room for the status bar at the bottom
   local height = FONT_HEIGHT * (map.height + 2)
   local width =  FONT_WIDTH * map.width
 
   love.graphics.setFont(font)
   love.graphics.setMode(width, height, false, false, 0)
-  love.graphics.setCaption("ig's program")
+  love.graphics.setCaption("demo program")
 end
 
 function DemoProgram.draw()

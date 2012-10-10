@@ -18,19 +18,20 @@ function ShadowCasting.load()
       color = {0, 255, 0, 0},
     }
   }
-  
+
   player = RLMapTile.new
   {
     display = "@",
     color = {255, 255, 0, 255},
-                        }
+  }
 
   map.player = player
   map.playerX = 20
   map.playerY = 20
 
-
   objectmap = {}
+
+  ShadowCasting.mapBuffer = nil
 
   -- leave enough room for the status bar at the bottom
   local height = FONT_HEIGHT * (map.height + 2)
