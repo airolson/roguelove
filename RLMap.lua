@@ -5,36 +5,36 @@
 RLMapTile = {}
 
 function RLMapTile.new(args)
-   local args = args or {}
+  local args = args or {}
 
-   -- TODO: make this a bit better to avoid the nil/false confusion as before (probably with a metatable)
-   local ret = {
-      display = args.display or ".",
-      color = args.color or {0, math.random(255), 0, 255},  -- TODO: create a colour table?
-      movement = args.movement or "true",
-   }
+  -- TODO: make this a bit better to avoid the nil/false confusion as before (probably with a metatable)
+  local ret = {
+    display = args.display or ".",
+    color = args.color or {0, math.random(255), 0, 255},  -- TODO: create a colour table?
+    movement = args.movement or "true",
+  }
 
-   return ret
+  return ret
 end
 
 RLMap = {}
 
 function RLMap.new(args)
-   local args = args or {}
+  local args = args or {}
 
-   -- defaults
-   local ret = {
-      height = args.height or 25,
-      width = args.width or 80,
-   }
+  -- defaults
+  local ret = {
+    height = args.height or 25,
+    width = args.width or 80,
+  }
 
-   for i=1,ret.height do
-      local column = {}
-      for j=1,ret.width do
-	 column[j] = RLMapTile.new(args.tile)
-      end
-      ret[i] = column
-   end
+  for i=1,ret.height do
+    local column = {}
+    for j=1,ret.width do
+      column[j] = RLMapTile.new(args.tile)
+    end
+    ret[i] = column
+  end
 
-   return ret
+  return ret
 end
