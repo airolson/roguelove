@@ -152,7 +152,6 @@ function DemoProgram.keypressed(key, unicode)
   end
 end
 
--- TODO: duplication! also, am I likely to put anything in here?
 function DemoProgram.update(dt)
   local x, y = love.mouse.getPosition()
   local mapX = math.floor(x / FONT_WIDTH) + 1
