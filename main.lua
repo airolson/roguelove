@@ -7,7 +7,7 @@ GameStates[1] = DemoProgram or {}
 GameStates[2] = DemoCircles or {}
 GameStates[3] = ShadowCasting or {}
 
-CURRENT = 3
+CURRENT = 1
 
 function love.load()
   if GameStates[CURRENT].load then
