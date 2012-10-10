@@ -32,6 +32,7 @@ function ShadowCasting.load()
   objectmap = {}
 
   ShadowCasting.mapBuffer = nil
+  shadows = false
 
   -- leave enough room for the status bar at the bottom
   local height = FONT_HEIGHT * (map.height + 2)
@@ -43,9 +44,9 @@ function ShadowCasting.load()
 end
 
 function ShadowCasting.draw()
+  ShadowCasting.drawMap()
   ShadowCasting.drawObjects()
   ShadowCasting.castShadows()
-  ShadowCasting.drawMap()
   ShadowCasting.drawStatus()
 end
 
