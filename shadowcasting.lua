@@ -218,20 +218,22 @@ function ShadowCasting.mousereleased(x, y, button)
 
   local function placeBlock(bx, by)
     objectmap[by] = objectmap[by] or {}
-    objectmap[by][bx] = RLMapTile.new{
+    objectmap[by][bx] = RLMapTile.new
+    {
       display = "#",
       color = {100, 100, 100, 0},
       movement = "false",
-                                     }
+    }
   end
 
   local function removeBlock(bx, by)
     objectmap[by] = objectmap[by] or {}
     objectmap[by][bx] = nil
-    map[by][bx] = RLMapTile.new{
+    map[by][bx] = RLMapTile.new
+    {
       display = ".",
       color = {0, 255, 0, 0},
-                               }
+    }
   end
 
   if button == "l" then
