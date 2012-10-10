@@ -59,10 +59,10 @@ function ShadowCasting.drawMap()
     local hp = math.pow(2, math.ceil(math.log(h)/math.log(2)))
 
     -- create the framebuffer for the map
-    ShadowCasting.mapBuffer = love.graphics.newFramebuffer(wp, hp)
+    ShadowCasting.mapBuffer = love.graphics.newCanvas(wp, hp)
 
     -- render the map to the framebuffer
-    love.graphics.setRenderTarget(ShadowCasting.mapBuffer)
+    love.graphics.setCanvas(ShadowCasting.mapBuffer)
     for y=1,map.height do
       for x=1,map.width do
         local tile = map[y][x]
@@ -72,7 +72,7 @@ function ShadowCasting.drawMap()
     end
 
     -- set the render target back to the window
-    love.graphics.setRenderTarget()
+    love.graphics.setCanvas()
   end
 
   -- draw the framebuffer to the screen
@@ -152,7 +152,7 @@ function ShadowCasting.castShadows()
   end
 end
 
-function permissiveFOV
+function permissiveFOV()
 end
 
 function recursiveFOV(startRadius, endRadius, startSlope, endSlope, visit, blocks)

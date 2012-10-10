@@ -73,10 +73,10 @@ function IgsProgram.drawMap()
     local hp = math.pow(2, math.ceil(math.log(h)/math.log(2)))
 
     -- create the framebuffer for the map
-    IgsProgram.mapBuffer = love.graphics.newFramebuffer(wp, hp)
+    IgsProgram.mapBuffer = love.graphics.newCanvas(wp, hp)
 
     -- render the map to the framebuffer
-    love.graphics.setRenderTarget(IgsProgram.mapBuffer)
+    love.graphics.setCanvas(IgsProgram.mapBuffer)
     for y=1,map.height do
       for x=1,map.width do
         local tile = map[y][x]
@@ -86,7 +86,7 @@ function IgsProgram.drawMap()
     end
 
     -- set the render target back to the window
-    love.graphics.setRenderTarget()
+    love.graphics.setCanvas()
   end
 
   -- draw the framebuffer to the screen
