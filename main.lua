@@ -40,22 +40,22 @@ function love.mousereleased(x, y, button)
 end
 
 function love.keypressed(key, unicode)
-  --   if key == "f1" then
-  --      CURRENT = 1
-  --      if GameStates[CURRENT].load then
-  --     GameStates[CURRENT].load()
-  --      end
-  --   elseif key == "f2" then
-  --      CURRENT = 2
-  --      if GameStates[CURRENT].load then
-  --     GameStates[CURRENT].load()
-  --      end
-  --   elseif key == "f3" then
-  --      CURRENT = 3
-  --      if GameStates[CURRENT].load then
-  --     GameStates[CURRENT].load()
-  --      end
-  --   elseif GameStates[CURRENT].keypressed then
-  --      GameStates[CURRENT].keypressed(key, unicode)
-  --   end
+  if key == "1" then
+    CURRENT = 1
+    if GameStates[CURRENT].load then
+      GameStates[CURRENT].load()
+    end
+  elseif key == "2" then
+    CURRENT = 2
+    if GameStates[CURRENT].load then
+      GameStates[CURRENT].load()
+    end
+  elseif key == "3" then
+    CURRENT = 3
+    if GameStates[CURRENT].load then
+      GameStates[CURRENT].load()
+    end
+  elseif GameStates[CURRENT].keypressed then
+    GameStates[CURRENT].keypressed(key, unicode)
+  end
 end

@@ -11,14 +11,16 @@ function ShadowCasting.load()
 
   StatusString = ""
 
-  map = RLMap.new{
+  map = RLMap.new
+  {
     tile = {
       display = ".",
       color = {0, 255, 0, 0},
     }
-                 }
-
-  player = RLMapTile.new{
+  }
+  
+  player = RLMapTile.new
+  {
     display = "@",
     color = {255, 255, 0, 255},
                         }
@@ -40,7 +42,7 @@ function ShadowCasting.load()
 end
 
 function ShadowCasting.draw()
-  --   ShadowCasting.clearMap()
+  -- ShadowCasting.clearMap()
   ShadowCasting.drawObjects()
   ShadowCasting.castShadows()
   ShadowCasting.drawMap()
@@ -108,7 +110,7 @@ function ShadowCasting.castShadows()
     local r, g, b = 0, 0, 0
 
     local function draw(x, y)
-      --         print(string.format("visiting %f, %f", x, y))
+      -- print(string.format("visiting %f, %f", x, y))
       local mx, my = math.floor(sx + x), math.floor(sy - y)
       map[my] = map[my] or {}
       map[my][mx] = map[my][mx] or {}
@@ -134,7 +136,7 @@ function ShadowCasting.castShadows()
       map[my] = map[my] or {}
       local tile = map[my][mx] or {}
       if tile.display == "#" then
-        --          print("wall at " .. x .. ", " .. y)
+        -- print("wall at " .. x .. ", " .. y)
         return true
       end
       return false

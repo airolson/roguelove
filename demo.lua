@@ -11,10 +11,11 @@ function DemoProgram.load()
 
   map = RLMap.new()
 
-  player = RLMapTile.new{
+  player = RLMapTile.new
+  {
     display = "@",
     color = {255, 255, 0, 255},
-                        }
+  }
 
   map.player = player
   map.playerX = 10
@@ -24,11 +25,12 @@ function DemoProgram.load()
 
   -- the vertical part of the L
   for y=8,17 do
-    local wall = RLMapTile.new{
+    local wall = RLMapTile.new
+    {
       display = "#",
       color = {100, 100, 100, 255},
       movement = "false",
-                              }
+    }
 
     local x = 13
     objectmap[y] = objectmap[y] or {}
@@ -37,11 +39,12 @@ function DemoProgram.load()
 
   -- the horizontal part of the L
   for x=14,17 do
-    local wall = RLMapTile.new{
+    local wall = RLMapTile.new
+    {
       display = "#",
       color = {100, 100, 100, 255},
       movement = "false",
-                              }
+    }
 
     local y = 17
     objectmap[y] = objectmap[y] or {}
@@ -158,11 +161,12 @@ function DemoProgram.update(dt)
       objectmap[mapY][mapX] = nil
     else
       objectmap[mapY] = objectmap[mapY] or {}
-      objectmap[mapY][mapX] = RLMapTile.new{
+      objectmap[mapY][mapX] = RLMapTile.new
+      {
         display = "#",
         color = {100, 100, 100, 255},
         movement = "false",
-                                           }
+      }
     end
   end
   if love.mouse.isDown("r") then
