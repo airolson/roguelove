@@ -1,8 +1,8 @@
 require "RLMap"
 
-IgsProgram = {}
+DemoProgram = {}
 
-function IgsProgram.load()
+function DemoProgram.load()
   math.randomseed(os.time())
 
   FONT_HEIGHT = 16
@@ -57,14 +57,14 @@ function IgsProgram.load()
   love.graphics.setCaption("ig's program")
 end
 
-function IgsProgram.draw()
-  IgsProgram.drawMap()
-  IgsProgram.drawObjects()
-  IgsProgram.drawStatus()
+function DemoProgram.draw()
+  DemoProgram.drawMap()
+  DemoProgram.drawObjects()
+  DemoProgram.drawStatus()
 end
 
-function IgsProgram.drawMap()
-  if not IgsProgram.mapBuffer then
+function DemoProgram.drawMap()
+  if not DemoProgram.mapBuffer then
     -- get the current width and height of the screen
     local w, h = love.graphics.getWidth(), love.graphics.getHeight()
 
@@ -73,10 +73,10 @@ function IgsProgram.drawMap()
     local hp = math.pow(2, math.ceil(math.log(h)/math.log(2)))
 
     -- create the framebuffer for the map
-    IgsProgram.mapBuffer = love.graphics.newCanvas(wp, hp)
+    DemoProgram.mapBuffer = love.graphics.newCanvas(wp, hp)
 
     -- render the map to the framebuffer
-    love.graphics.setCanvas(IgsProgram.mapBuffer)
+    love.graphics.setCanvas(DemoProgram.mapBuffer)
     for y=1,map.height do
       for x=1,map.width do
         local tile = map[y][x]
@@ -90,12 +90,12 @@ function IgsProgram.drawMap()
   end
 
   -- draw the framebuffer to the screen
-  love.graphics.draw(IgsProgram.mapBuffer)
+  love.graphics.draw(DemoProgram.mapBuffer)
 end
 
 -- TODO: objectmap is sparse; iterate over just the objects
 -- TODO: accept an objectmap parameter
-function IgsProgram.drawObjects()
+function DemoProgram.drawObjects()
   for y=1,map.height do
     local column = objectmap[y]
     if column then
@@ -120,13 +120,13 @@ function IgsProgram.drawObjects()
 end
 
 -- TODO: probably construct a big gay string elsewhere and write it all at once
-function IgsProgram.drawStatus()
+function DemoProgram.drawStatus()
   love.graphics.setColor(255, 255, 255, 255)
   love.graphics.print("X=" .. map.playerX .. " Y=" .. map.playerY, 0, (map.height + 2 - 1) * FONT_HEIGHT)
   love.graphics.print("FPS: " .. love.timer.getFPS(), (map.width - 8) * FONT_WIDTH, (map.height + 2 - 1) * FONT_HEIGHT)
 end
 
-function IgsProgram.keypressed(key, unicode)
+function DemoProgram.keypressed(key, unicode)
   local newX, newY = map.playerX, map.playerY
 
   if key == 'left' then
@@ -148,7 +148,7 @@ function IgsProgram.keypressed(key, unicode)
 end
 
 -- TODO: duplication! also, am I likely to put anything in here?
-function IgsProgram.update(dt)
+function DemoProgram.update(dt)
   local x, y = love.mouse.getPosition()
   local mapX = math.floor(x / FONT_WIDTH) + 1
   local mapY = math.floor(y / FONT_HEIGHT) + 1

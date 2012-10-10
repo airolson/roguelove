@@ -1,10 +1,10 @@
-require "ig"
+require "demo"
 require "circles"
 require "shadowcasting"
 
 GameStates = {}
-GameStates[1] = IgsProgram or {}
-GameStates[2] = IgsCircles or {}
+GameStates[1] = DemoProgram or {}
+GameStates[2] = DemoCircles or {}
 GameStates[3] = ShadowCasting or {}
 
 CURRENT = 3
