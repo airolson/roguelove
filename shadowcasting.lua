@@ -43,7 +43,6 @@ function ShadowCasting.load()
 end
 
 function ShadowCasting.draw()
-  -- ShadowCasting.clearMap()
   ShadowCasting.drawObjects()
   ShadowCasting.castShadows()
   ShadowCasting.drawMap()
@@ -194,7 +193,7 @@ function recursiveFOV(startRadius, endRadius, startSlope, endSlope, visit, block
   end
 end
 
--- TODO: probably construct a big gay string elsewhere and write it all at once
+-- TODO: probably construct a big string elsewhere and write it all at once
 function ShadowCasting.drawStatus()
   love.graphics.setColor(255, 255, 255, 255)
   love.graphics.print(StatusString, 0, (map.height + 2 - 1) * FONT_HEIGHT)

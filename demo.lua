@@ -124,7 +124,7 @@ function DemoProgram.drawObjects()
   love.graphics.print(player.display, (map.playerX - 1) * FONT_WIDTH, (map.playerY - 1) * FONT_HEIGHT)
 end
 
--- TODO: probably construct a big gay string elsewhere and write it all at once
+-- TODO: probably construct a big string elsewhere and write it all at once
 function DemoProgram.drawStatus()
   love.graphics.setColor(255, 255, 255, 255)
   love.graphics.print("X=" .. map.playerX .. " Y=" .. map.playerY, 0, (map.height + 2 - 1) * FONT_HEIGHT)
