@@ -10,10 +10,10 @@ function DemoCircles.load()
 
   DemoCircles.CurrentAlgorithm = holes45
 
-  local height = (2 * DemoCircles.MAXRAD + 3) * DemoCircles.BOXSIZE
-  local width = height
+  local width = (2 * DemoCircles.MAXRAD + 3) * DemoCircles.BOXSIZE
+  local height = width
 
-  love.graphics.setMode(height, width)
+  love.graphics.setMode(width, height)
 end
 
 function DemoCircles.draw()
