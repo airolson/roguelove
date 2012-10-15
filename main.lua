@@ -3,11 +3,11 @@ require "circles"
 require "shadowcasting"
 
 GameStates = {}
-GameStates[1] = DemoProgram or {}
-GameStates[2] = DemoCircles or {}
-GameStates[3] = ShadowCasting or {}
+GameStates["1"] = DemoProgram or {}
+GameStates["2"] = DemoCircles or {}
+GameStates["3"] = ShadowCasting or {}
 
-CURRENT = 1
+CURRENT = "1"
 
 function love.load()
   if GameStates[CURRENT].load then
@@ -40,18 +40,8 @@ function love.mousereleased(x, y, button)
 end
 
 function love.keypressed(key, unicode)
-  if key == "1" then
-    CURRENT = 1
-    if GameStates[CURRENT].load then
-      GameStates[CURRENT].load()
-    end
-  elseif key == "2" then
-    CURRENT = 2
-    if GameStates[CURRENT].load then
-      GameStates[CURRENT].load()
-    end
-  elseif key == "3" then
-    CURRENT = 3
+  if GameStates[key] then
+    CURRENT = key
     if GameStates[CURRENT].load then
       GameStates[CURRENT].load()
     end
