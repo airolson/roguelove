@@ -1,13 +1,15 @@
 require "demo"
 require "circles"
 require "shadowcasting"
+require "spritebatchtest"
 
 GameStates = {}
-GameStates["1"] = DemoProgram or {}
-GameStates["2"] = DemoCircles or {}
-GameStates["3"] = ShadowCasting or {}
+GameStates["1"] = DemoProgram     or {}
+GameStates["2"] = DemoCircles     or {}
+GameStates["3"] = ShadowCasting   or {}
+GameStates["4"] = SpriteBatchTest or {}
 
-CURRENT = "1"
+CURRENT = "4"
 
 function love.load()
   if GameStates[CURRENT].load then
