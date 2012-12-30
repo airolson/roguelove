@@ -42,6 +42,7 @@ function love.mousereleased(x, y, button)
 end
 
 function love.keypressed(key, unicode)
+  print("Key:", key, "Unicode:", unicode)
   if GameStates[key] then
     CURRENT = key
     if GameStates[CURRENT].load then
