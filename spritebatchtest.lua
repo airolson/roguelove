@@ -8,8 +8,8 @@
 -- create a quad for each sprite
 -- each added quad (sprite) represents an instruction to draw that sprite
 
--- for the background, pre-load the batch using addq
--- as foreground items change, change each quad in the batch using setq
+-- for the background, pre-load the batch using add
+-- as foreground items change, change each quad in the batch using set
 
 SpriteBatchTest = {}
 
@@ -48,19 +48,19 @@ function SpriteBatchTest.load()
   SpriteBatchTest.pos_x = 10
   SpriteBatchTest.pos_y = 10
 
-  SpriteBatchTest.draw_man = batch:addq(sprite, 
+  SpriteBatchTest.draw_man = batch:add(sprite, 
 					SpriteBatchTest.pos_x * SpriteBatchTest.ATLAS_TILE_WIDTH, 
 					SpriteBatchTest.pos_y * SpriteBatchTest.ATLAS_TILE_HEIGHT)
   SpriteBatchTest.batch = batch
 
-  love.graphics.setCaption("spitebatch")
-  love.graphics.setMode(SpriteBatchTest.MAP_TILES_WIDE * SpriteBatchTest.ATLAS_TILE_WIDTH,
+  love.window.setTitle("spitebatch")
+  love.window.setMode(SpriteBatchTest.MAP_TILES_WIDE * SpriteBatchTest.ATLAS_TILE_WIDTH,
 			SpriteBatchTest.MAP_TILES_HIGH * SpriteBatchTest.ATLAS_TILE_HEIGHT)
   love.keyboard.setKeyRepeat(0.2, 0.05)
 end
 
 function SpriteBatchTest.draw()
-  SpriteBatchTest.batch:setq(SpriteBatchTest.draw_man,
+  SpriteBatchTest.batch:set(SpriteBatchTest.draw_man,
 			     SpriteBatchTest.sprite,
 			     SpriteBatchTest.pos_x * SpriteBatchTest.ATLAS_TILE_WIDTH, 
 			     SpriteBatchTest.pos_y * SpriteBatchTest.ATLAS_TILE_HEIGHT)

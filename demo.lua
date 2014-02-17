@@ -58,8 +58,8 @@ function DemoProgram.load()
   local width =  FONT_WIDTH * map.width
 
   love.graphics.setFont(font)
-  love.graphics.setMode(width, height, false, false, 0)
-  love.graphics.setCaption("demo program")
+  love.window.setMode(width, height, {resizable=false, fullscreen=false, vsync=true})
+  love.window.setTitle("demo program")
 end
 
 function DemoProgram.draw()

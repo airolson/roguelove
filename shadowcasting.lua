@@ -39,8 +39,8 @@ function ShadowCasting.load()
   local width =  FONT_WIDTH * map.width
 
   love.graphics.setFont(font)
-  love.graphics.setMode(width, height, false, false, 0)
-  love.graphics.setCaption("shadowcasting!")
+  love.window.setMode(width, height, {resizable=false, fullscreen=false, vsync=true})
+  love.window.setTitle("shadowcasting!")
 end
 
 function ShadowCasting.draw()

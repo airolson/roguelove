@@ -13,7 +13,7 @@ function DemoCircles.load()
   local width = (2 * DemoCircles.MAXRAD + 3) * DemoCircles.BOXSIZE
   local height = width
 
-  love.graphics.setMode(width, height)
+  love.window.setMode(width, height)
 end
 
 function DemoCircles.draw()
